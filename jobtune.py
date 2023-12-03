@@ -1,6 +1,12 @@
+import json
 import sqlite3
+from industries_skills import industries_skills
 from prettytable import PrettyTable
+from companies_data import companies
 
+# print("List of Agricultural Skills:")
+# for skill in industries_skills["agricultural"]:
+#     print(skill)
 user_name = input("Welcome. Please enter your full names: ")
 names = user_name.split()
 
@@ -46,8 +52,9 @@ def insert_credentials(full_names, skill, graduation_year, work_experience):
 
 # Get user input for each field
 full_names = user_name
-skill = input("Enter your skill: ")
+user_skills = input("Enter your skill: ")
 print(" ")
+
 graduation_year = input("Enter your graduation year: ")
 print(" ")
 work_experience = input("Enter your work experience: ")
@@ -57,70 +64,79 @@ print("Thank you. Your profile has been created")
 # Display the entered credentials using PrettyTable
 credentials_table = PrettyTable()
 credentials_table.field_names = ["Full Names", "Skill", "Graduation Year", "Work Experience"]
-credentials_table.add_row([full_names, skill, graduation_year, work_experience])
+credentials_table.add_row([full_names, user_skills, graduation_year, work_experience])
 
 print("Credentials entered:")
 print(credentials_table)
 
 # Add the user input to the table
-insert_credentials(full_names, skill, graduation_year, work_experience)
+insert_credentials(full_names, user_skills, graduation_year, work_experience)
 
 print("Credentials stored in the database.")
 
+# Read data from the JSON file
+with open('companies.json', 'r') as json_file:
+    companies = json.load(json_file)
 
-# def match_skills(user_skills, job_skills):
-#     """
-#     Calculate the similarity score between user skills and job skills.
+# Print the names of the companies
+# for company in companies:
+#     print(f"ID: {company['id']}, Name: {company['name']}, Industry: {company['industry']}, Location: {company['location']}")
 
-#     Parameters:
-#     - user_skills: List of strings representing user skills.
-#     - job_skills: List of strings representing job skills.
 
-#     Returns:
-#     - Similarity score (float) between 0 and 1.
-#     """
-#     common_skills = set(user_skills) & set(job_skills)
-#     total_skills = len(set(user_skills) | set(job_skills))
 
-#     similarity_score = len(common_skills) / total_skills if total_skills > 0 else 0
-#     return similarity_score
+def match_skills(user_skills, job_skills):
+    """
+    Calculate the similarity score between user skills and job skills.
 
-# def find_matching_jobs(user_skills, job_data):
-#     """
-#     Find and rank job vacancies based on user skills.
+    Parameters:
+    - user_skills: List of strings representing user skills.
+    - job_skills: List of strings representing job skills.
 
-#     Parameters:
-#     - user_skills: List of strings representing user skills.
-#     - job_data: List of dictionaries representing job vacancies, each containing an 'id' and 'skills' field.
+    Returns:
+    - Similarity score (float) between 0 and 1.
+    """
+    common_skills = set(user_skills) & set(job_skills)
+    total_skills = len(set(user_skills) | set(job_skills))
 
-#     Returns:
-#     - List of tuples (job_id, similarity_score) sorted by descending similarity score.
-#     """
-#     job_matches = []
+    similarity_score = len(common_skills) / total_skills if total_skills > 0 else 0
+    return similarity_score
 
-#     for job in job_data:
-#         job_id = job['id']
-#         job_skills = job['skills']
+def find_matching_jobs(user_skills, job_data):
+    """
+    Find and rank job vacancies based on user skills.
 
-#         similarity_score = match_skills(user_skills, job_skills)
-#         job_matches.append((job_id, similarity_score))
+    Parameters:
+    - user_skills: List of strings representing user skills.
+    - job_data: List of dictionaries representing job vacancies, each containing an 'id' and 'skills' field.
 
-#     # Sort job matches by similarity score in descending order
-#     sorted_matches = sorted(job_matches, key=lambda x: x[1], reverse=True)
-#     return sorted_matches
+    Returns:
+    - List of tuples (job_id, similarity_score) sorted by descending similarity score.
+    """
+    job_matches = []
 
-# # Example data
-# user_skills = ["Python", "Data Analysis", "Machine Learning"]
-# job_data = [
-#     {"id": 1, "skills": ["Python", "Data Analysis", "Statistics"]},
-#     {"id": 2, "skills": ["Java", "Web Development", "Database Management"]},
-#     {"id": 3, "skills": ["Python", "Machine Learning", "Deep Learning"]},
-# ]
+    for job in job_data:
+        job_id = job['id']
+        job_skills = job['skills']
 
-# # Find matching jobs
-# matching_jobs = find_matching_jobs(user_skills, job_data)
+        similarity_score = match_skills(user_skills, job_skills)
+        job_matches.append((job_id, similarity_score))
 
-# # Display the results
-# print("Matching Jobs:")
-# for job_id, similarity_score in matching_jobs:
-#     print(f"Job ID: {job_id}, Similarity Score: {similarity_score}")
+    # Sort job matches by similarity score in descending order
+    sorted_matches = sorted(job_matches, key=lambda x: x[1], reverse=True)
+    return sorted_matches
+
+# Example data
+user_skills = ["Python", "Data Analysis", "Machine Learning"]
+job_data = [
+    {"id": 1, "skills": ["Python", "Data Analysis", "Statistics"]},
+    {"id": 2, "skills": ["Java", "Web Development", "Database Management"]},
+    {"id": 3, "skills": ["Python", "Machine Learning", "Deep Learning"]},
+]
+
+# Find matching jobs
+matching_jobs = find_matching_jobs(user_skills, job_data)
+
+# Display the results
+print("Matching Jobs:")
+for job_id, similarity_score in matching_jobs:
+    print(f"Job ID: {job_id}, Similarity Score: {similarity_score}")
