@@ -1,5 +1,5 @@
-industries_skills = {
-    "agricultural": [
+industries_skills = [
+    {"id": 1, "skills": [
         "Crop Management",
         "Soil Analysis",
         "Pest and Disease Control",
@@ -32,110 +32,149 @@ industries_skills = {
         "Problem Solving",
         "Adaptability",
         "Continuous Improvement Strategies",
-    ],
-    "Electronics and Electrical": [
+        ]
+     },
+    {"id": 2, "skills": [
         "Circuit Design",
         "Electronic Component Assembly",
         "Electrical System Maintenance",
         "Microcontroller Programming",
         "Electronic Testing and Troubleshooting",
-    ],
-    "Foodstuff and Beverages": [
+        ]
+     },
+    {"id": 3, "skills": [
         "Food Safety and Hygiene",
         "Quality Control",
         "Supply Chain Management",
         "Food Product Development",
         "Inventory Management",
-    ],
-    "Home and Furniture": [
+        ]
+     },
+    {"id": 4, "skills": [
         "Interior Design",
         "Furniture Manufacturing",
         "Home Decor Planning",
         "Carpentry and Woodworking",
         "Sustainable Design Practices",
-    ],
-    "Services": [
+        ]
+     },
+    {"id": 5, "skills": [
         "Customer Service",
         "Problem Solving",
         "Time Management",
         "Communication Skills",
         "Service Innovation",
-    ],
-    "Hotels, Lodges and Tourism": [
+        ]
+     },
+    {"id": 6, "skills": [
         "Hospitality Management",
         "Customer Relationship Management",
         "Tour Planning and Guiding",
         "Event Management",
         "Reservation Systems",
-    ],
-    "Health and Beauty": [
+        ]
+     },
+    {"id": 7, "skills": [
         "Wellness Consultation",
         "Beauty Product Knowledge",
         "Customer Consultation",
         "Health and Safety Standards",
         "Esthetics and Beauty Treatments",
-    ],
-    "Construction and Real Estate": [
+        ]
+     },
+    {"id": 8, "skills": [
         "Project Management",
         "Architectural Design",
         "Construction Site Supervision",
         "Building Inspection",
         "Real Estate Development",
-    ],
-    "Travel and Leisure": [
+        ]
+     },
+    {"id": 9, "skills": [
         "Travel Planning",
         "Destination Knowledge",
         "Tourism Marketing",
         "Adventure Travel Expertise",
         "Cultural Awareness",
-    ],
-    "Energy and Environment Resources": [
+        ]
+     },
+    {"id": 10, "skills": [
         "Renewable Energy Technologies",
         "Environmental Impact Assessment",
         "Sustainable Resource Management",
         "Climate Change Mitigation",
         "Green Technologies",
-    ],
-    "Financial Services": [
+        ]
+     },
+    {"id": 11, "skills": [
         "Financial Analysis",
         "Risk Management",
         "Investment Strategies",
         "Financial Planning",
         "Regulatory Compliance",
-    ],
-    "Education": [
+        ]
+     },
+    {"id": 12, "skills": [
         "Curriculum Development",
         "Instructional Design",
         "Student Assessment",
         "Classroom Management",
         "E-Learning Technologies",
-    ],
-    "E-commerce and Retail": [
+        ]
+     },
+    {"id": 13, "skills": [
         "Online Store Management",
         "Inventory Optimization",
         "E-commerce Platform Knowledge",
         "Customer Relationship Management",
         "Digital Marketing",
-    ],
-    "Transport and Logistics": [
+        ]
+     },
+    {"id": 14, "skills": [
         "Supply Chain Management",
         "Logistics Planning",
         "Transportation Optimization",
         "Inventory Control",
         "Fleet Management",
-    ],
-    "Commercial and Professional Services": [
+        ]
+     },
+    {"id": 15, "skills": [
         "Project Management",
         "Client Relationship Management",
         "Business Strategy",
         "Legal Consultation",
         "Consultancy Services",
-    ],
-    "Automobile and Accessories": [
+        ]
+     },
+    {"id": 16, "skills": [
         "Automotive Maintenance",
         "Vehicle Diagnostics",
         "Automotive Engineering",
         "Auto Parts Sales",
         "Customer Service in Automotive Industry",
-    ],
-}
+        ]
+     },
+    {"id": 17, "skills": [
+        "Programming",
+        "Web Development",
+        "Software Engineering",
+        "Data Analysis",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Cybersecurity",
+        "Network Administration",
+        "Database Management",
+        "Cloud Computing",
+        "Mobile App Development",
+        "UI/UX Design",
+        "Blockchain Development",
+        "IoT (Internet of Things)",
+        "DevOps",
+        "IT Project Management",
+        "Systems Architecture",
+        "Robotics",
+        "Augmented Reality (AR)",
+        "Virtual Reality (VR)",
+    ]
+     },
+]
