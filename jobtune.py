@@ -4,9 +4,7 @@ from industries_skills import industries_skills
 from prettytable import PrettyTable
 from companies_data import companies
 
-# print("List of Agricultural Skills:")
-# for skill in industries_skills["agricultural"]:
-#     print(skill)
+# Get name of the user and reject if the name is only one
 user_name = input("Welcome. Please enter your full names: ")
 names = user_name.split()
 
@@ -15,7 +13,7 @@ if len(names) < 2:
     user_name = input("Please enter your full names again: ")
 
 print(" ")
-print("Thank you for choosing us. May you continue with the signing in")
+print(f"Thank you {user_name} for choosing us. May you continue with the signing in")
 
 # Function to create the table if it doesn't exist
 def create_table():
@@ -52,37 +50,45 @@ def insert_credentials(full_names, skill, graduation_year, work_experience):
 
 # Get user input for each field
 full_names = user_name
-user_skills = input("Enter your skill: ")
+user_career = input("Enter your career/professional background: ")
+print(" ")
+user_skills_input = input("Enter your skills separated by commas (enter at least one skill): ")
+print(" ")
+while True:
+    try:
+        graduation_year = int(input("Enter your graduation year: "))
+        break  # Break the loop if the input is successfully converted to an integer
+    except ValueError:
+        print("Invalid input. Please enter a valid number for graduation year.")
+
 print(" ")
 
-graduation_year = input("Enter your graduation year: ")
-print(" ")
-work_experience = input("Enter your work experience: ")
+while True:
+    try:
+        work_experience = int(input("Enter your work experience: "))
+        break  # Break the loop if the input is successfully converted to an integer
+    except ValueError:
+        print("Invalid input. Please enter a valid number for work experience.")
+
 print(" ")
 print("Thank you. Your profile has been created")
 
 # Display the entered credentials using PrettyTable
 credentials_table = PrettyTable()
 credentials_table.field_names = ["Full Names", "Skill", "Graduation Year", "Work Experience"]
-credentials_table.add_row([full_names, user_skills, graduation_year, work_experience])
+credentials_table.add_row([full_names, user_career, graduation_year, work_experience])
 
-print("Credentials entered:")
+print("These are the credentials entered:")
 print(credentials_table)
 
 # Add the user input to the table
-insert_credentials(full_names, user_skills, graduation_year, work_experience)
+insert_credentials(full_names, user_career, graduation_year, work_experience)
 
 print("Credentials stored in the database.")
 
 # Read data from the JSON file
 with open('companies.json', 'r') as json_file:
     companies = json.load(json_file)
-
-# Print the names of the companies
-# for company in companies:
-#     print(f"ID: {company['id']}, Name: {company['name']}, Industry: {company['industry']}, Location: {company['location']}")
-
-
 
 def match_skills(user_skills, job_skills):
     """
@@ -101,7 +107,7 @@ def match_skills(user_skills, job_skills):
     similarity_score = len(common_skills) / total_skills if total_skills > 0 else 0
     return similarity_score
 
-def find_matching_jobs(user_skills, job_data):
+def find_matching_jobs(user_skills, job_data, company_data):
     """
     Find and rank job vacancies based on user skills.
 
@@ -116,27 +122,37 @@ def find_matching_jobs(user_skills, job_data):
 
     for job in job_data:
         job_id = job['id']
-        job_skills = job['skills']
+        job_skills = [skill.lower() for skill in job['skills']]
+        company_name = next((company['name'] for company in company_data if company['id'] == job_id), f"Unknown Company {job_id}")
 
         similarity_score = match_skills(user_skills, job_skills)
-        job_matches.append((job_id, similarity_score))
+        job_matches.append((company_name, job_id, similarity_score))
 
     # Sort job matches by similarity score in descending order
-    sorted_matches = sorted(job_matches, key=lambda x: x[1], reverse=True)
+    sorted_matches = sorted(job_matches, key=lambda x: x[2], reverse=True)
     return sorted_matches
 
-# Example data
-user_skills = ["Python", "Data Analysis", "Machine Learning"]
-job_data = [
-    {"id": 1, "skills": ["Python", "Data Analysis", "Statistics"]},
-    {"id": 2, "skills": ["Java", "Web Development", "Database Management"]},
-    {"id": 3, "skills": ["Python", "Machine Learning", "Deep Learning"]},
-]
+# Split the input into a list of skills
+user_skills = [skill.strip().lower() for skill in user_skills_input.split(",")]
+
+job_data = industries_skills
+company_data = companies
 
 # Find matching jobs
-matching_jobs = find_matching_jobs(user_skills, job_data)
+matching_jobs = find_matching_jobs(user_skills, job_data, company_data)
 
 # Display the results
 print("Matching Jobs:")
-for job_id, similarity_score in matching_jobs:
-    print(f"Job ID: {job_id}, Similarity Score: {similarity_score}")
+found_match = False
+
+for company_name, job_id, similarity_score in matching_jobs:
+    if similarity_score > 0.1:  # Adjust the threshold as needed
+        print(f"Congratulations! {company_name}  company of Job ID {job_id} is a strong match for your skills with a similarity score of {similarity_score:.2f}")
+        found_match = True
+        break
+    elif similarity_score > 0.01:
+        print(f"{company_name}  company of Job ID {job_id} seems to be a good match for your skills with a similarity score of {similarity_score:.2f}")
+        found_match = True
+        break
+if not found_match:
+        print("Your skills do not match any of the available vacancies. You may leave your email for upcoming opportunities")
