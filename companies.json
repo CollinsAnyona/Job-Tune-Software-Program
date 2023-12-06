@@ -292,5 +292,16 @@
     "name": "Ireland Blyth",
     "industry": "Foodstuff and Beverages",
     "location": "Port Louis, Mauritius"
+<<<<<<< HEAD
   }
 ]
+=======
+  },
+  {
+    "id": 17,
+    "name": "Google LLC ",
+    "industry": "Technology",
+    "location": "Kinston, Jamaica"
+  }
+]
+>>>>>>> bfcba809d468a9dd0e584854d81b8e52abee6b88
