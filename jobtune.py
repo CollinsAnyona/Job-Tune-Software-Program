@@ -1,6 +1,5 @@
 import json
 import sqlite3
-from industries_skills import industries_skills
 from prettytable import PrettyTable
 from companies_data import companies
 
@@ -134,6 +133,8 @@ def find_matching_jobs(user_skills, job_data, company_data):
 
 # Split the input into a list of skills
 user_skills = [skill.strip().lower() for skill in user_skills_input.split(",")]
+with open("industries_data.json", "r") as f:
+    industries_skills = json.load(f)
 
 job_data = industries_skills
 company_data = companies
