@@ -55,4 +55,4 @@ companies = [
 
 # Writing to JSON file
 with open('companies.json', 'w') as json_file:
-    json.dump(companies, json_file, indent=2
+    json.dump(companies, json_file, indent=2)
