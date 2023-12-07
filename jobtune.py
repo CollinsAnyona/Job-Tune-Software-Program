@@ -156,4 +156,4 @@ for company_name, job_id, similarity_score in matching_jobs:
         found_match = True
         break
 if not found_match:
-        print("Your skills do not match any of the available vacancies. You may leave your email for upcoming opportunities")
+        print("Your skills do not match any of the available vacancies. You may leave your email for upcoming opportunities"
