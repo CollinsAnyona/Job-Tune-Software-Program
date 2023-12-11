@@ -22,6 +22,7 @@ companies = [
     {"id": 14, "name": "Swvl", "industry": "Transport and logistics", "location": "Cairo, Egypt"},
     {"id": 14, "name": "Winer logistic campany", "industry": "Transport and logistics", "location": "Kigali, Rwanda"},
     {"id": 14, "name": "Right travel&Safaris agency", "industry": "Transport and logistics", "location": "Kigali, Rwanda"},
+    {"id": 14, "name": "Winner logistic cmpany", "industry": "Transport and logistics", "location": "Kigali, Rwanda"},
     {"id": 13, "name": "Konga", "industry": "E-commerce and retail", "location": "Lagos, Nigeria"},
     {"id": 11, "name": "Jumo", "industry": "Financial services", "location": "Cape Town, South Africa"},
     {"id": 10, "name": "M-kopa", "industry": "Energy and environment resources", "location": "Nairobi, Kenya"},
