@@ -266,6 +266,12 @@
   },
   {
     "id": 4,
+    "name": "Home decor",
+    "industry": "Home and Furniture",
+    "location": "Kigali, Rwanda"
+  },
+  {
+    "id": 4,
     "name": "Antarc Enterprises Ltd",
     "industry": "Home and Furniture",
     "location": "Nairobi, Kenya"
