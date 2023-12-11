@@ -11,6 +11,7 @@ companies = [
     {"id": 1, "name": "Williamson Tea Kenya Plc.", "industry": "Agricultural", "location": "Nairobi, Kenya"},
     {"id": 16, "name": "Car & General (K) Ltd.", "industry": "Automobile and accessories", "location": "Nairobi, Kenya"},
     {"id": 4, "name": "ABSA Bank Kenya Plc.", "industry": "Financial services", "location": "Nairobi, Kenya"},
+    {"id": 4, "name": "I&M Bank", "industry": "Financial services", "location": "Kigali, Rwanda"},
     {"id": 4, "name": "Jumia group", "industry": "Financial services", "location": "Lagos, Nigeria"},
     {"id": 15, "name": "Andela", "industry": "Commercial and professional services", "location": "New York, United States"},
     {"id": 13, "name": "Takealot", "industry": "E-commerce and retail", "location": "Cape Town, South Africa"},
