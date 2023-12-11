@@ -50,6 +50,7 @@ companies = [
     {"id": 2, "name": "Arrow Altech Distribution", "industry": "Electronics and Electrical", "location": "Milnerton, South Africa"},
     {"id": 2, "name": "GAM Solar Energy and Engineering Co. Ltd", "industry": "Electronics and Electrical", "location": "Serrekunda, Gambia"},
     {"id": 3, "name": "BAJ Trading Ltd.", "industry": "Foodstuff and Beverages", "location":"Nairobi, Kenya"},
+    {"id": 3, "name": "Camellia", "industry": "Foodstuff and Beverages", "location":"Kigali, Rwanda"},
     {"id": 3, "name": "Ireland Blyth", "industry": "Foodstuff and Beverages", "location": "Port Louis, Mauritius"}
 ]
 
