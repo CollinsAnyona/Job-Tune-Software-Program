@@ -4,6 +4,7 @@
     "name": "Micorosft",
     "industry": "Technology",
     "location": "Nairobi,Kenya"
+
   },
   {
     "id": 1,
@@ -58,6 +59,12 @@
     "name": "Jumia group",
     "industry": "Financial services",
     "location": "Lagos, Nigeria"
+  },
+  {
+    "id": 4,
+    "name": "I&M bank",
+    "industry": "Financial services",
+    "location": "kigali, Rwanda"
   },
   {
     "id": 15,
