@@ -44,6 +44,7 @@ companies = [
     {"id": 5, "name": "Magnate Venture Ltd", "industry": "Services", "location": "Nairobi, Kenya"},
     {"id": 4, "name": "Africa Furniture Importers Directory", "industry": "Home and Office Furniture", "location": "Africa, United Arab Emirates"},
     {"id": 4, "name": "Magari", "industry": "Home and Office Furniture", "location": "Nairobi, Kenya"},
+    {"id": 4, "name": "Home decor", "industry": "Home and Office Furniture", "location": "Kigali, Rwanda"},
     {"id": 4, "name": "Hwan Sung Ltd", "industry": "Home and Furniture", "location": "Kampala, Uganda"},
     {"id": 4, "name": "Antarc Enterprises Ltd", "industry": "Home and Furniture", "location": "Nairobi, Kenya"},
     {"id": 2, "name": "Elephant Group Limited", "industry": "Electronics and Electrical", "location": "Lagos, Nigeria"},
