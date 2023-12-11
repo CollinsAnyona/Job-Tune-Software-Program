@@ -23,6 +23,7 @@ companies = [
     {"id": 11, "name": "Cellulant", "industry": "Financial services", "location": "Nairobi, Kenya"},
     {"id": 12, "name": "African Leadership Academy", "industry": "Education", "location": "Cape Town, South Africa"},
     {"id": 12, "name": "African Leadership University", "industry": "Education", "location": "Kigali, Rwanda"},
+    {"id": 12, "name": "University of Rwanda", "industry": "Education", "location": "Kigali, Rwanda"},
     {"id": 11, "name": "Opay", "industry": "Financial services", "location": "Lagos, Nigeria"},
     {"id": 11, "name": "CarePay", "industry": "Financial services", "location": "Nairobi, Kenya"},
     {"id": 10, "name": "Powerhive", "industry": "Energy and environment resources", "location": "Nairobi, Kenya"},
