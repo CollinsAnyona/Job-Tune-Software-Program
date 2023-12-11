@@ -34,6 +34,7 @@ companies = [
     {"id": 10, "name": "Powerhive", "industry": "Energy and environment resources", "location": "Nairobi, Kenya"},
     {"id": 9, "name": "Travelstart", "industry": "Travel and leisure", "location": "Cape Town, South Africa"},
     {"id": 8, "name": "Nabaki Afrika", "industry": "Construction and Real Estate", "location": "Dar es Salaam, Tanzania"},
+    {"id": 8, "name": "Bright construction campany", "industry": "Construction and Real Estate", "location": "Kigali, Rwanda"},
     {"id": 8, "name": "Addis Property Marketing Group", "industry": "Construction and Real Estate", "location": "Addis Ababa, Ethiopia"},
     {"id": 7, "name": "Artniom", "industry": "Health and beauty", "location": "Abuja, Nigeria"},
     {"id": 1, "name": "Seminis East Africa", "industry": "Agricultural", "location": "Nairobi, Kenya"},
