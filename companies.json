@@ -212,6 +212,12 @@
   },
   {
     "id": 6,
+    "name": "Djalia",
+    "industry": "Hotels, Lodges and Tourism",
+    "location": "Kigali, Rwanda"
+  },
+  {
+    "id": 6,
     "name": "Kaingu Safari Lounge",
     "industry": "Hotels, Lodges and Tourism",
     "location": "Lusaka, Zambia"
