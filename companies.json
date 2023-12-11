@@ -290,6 +290,12 @@
   },
   {
     "id": 2,
+    "name": "USA Technology",
+    "industry": "Electronics and Electrical",
+    "location": "Kigali, Rwanda"
+  },
+  {
+    "id": 2,
     "name": "GAM Solar Energy and Engineering Co. Ltd",
     "industry": "Electronics and Electrical",
     "location": "Serrekunda, Gambia"
