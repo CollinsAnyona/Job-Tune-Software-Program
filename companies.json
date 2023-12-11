@@ -295,6 +295,12 @@
     "location": "Serrekunda, Gambia"
   },
   {
+    "id": 2,
+    "name": "Camellia",
+    "industry": "Foodstuff and Beverages",
+    "location": "Kigali, Rwanda"
+  },
+  {
     "id": 3,
     "name": "BAJ Trading Ltd.",
     "industry": "Foodstuff and Beverages",
