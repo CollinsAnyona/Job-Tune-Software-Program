@@ -20,6 +20,7 @@ companies = [
     {"id": 10, "name": "D.light", "industry": "Energy and resources", "location": "San Fransisco, United Sates of America"},
     {"id": 10, "name": "Rwanda Energy Group", "industry": "Energy and resources", "location": "Kigali, Rwanda"},
     {"id": 14, "name": "Swvl", "industry": "Transport and logistics", "location": "Cairo, Egypt"},
+    {"id": 14, "name": "Winer logistic campany", "industry": "Transport and logistics", "location": "Kigali, Rwanda"},
     {"id": 14, "name": "Right travel&Safaris agency", "industry": "Transport and logistics", "location": "Kigali, Rwanda"},
     {"id": 13, "name": "Konga", "industry": "E-commerce and retail", "location": "Lagos, Nigeria"},
     {"id": 11, "name": "Jumo", "industry": "Financial services", "location": "Cape Town, South Africa"},
